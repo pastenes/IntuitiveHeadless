@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Intuitive Headless`,
+    description: `Kicking off our next, great Gatsby version of our new site!.`,
+    author: `@richardpastenes`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -14,13 +14,24 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-wordpress",
+      resolve: 'gatsby-source-wordpress',
       options: {
-        baseUrl: "intuitive.loc/admin",
-        protocol: "http",
+        baseUrl: 'intuitive.loc/admin',
+        protocol: 'http',
         hostingWPCOM: false,
         useACF: false,
         verboseOutput: true,
+        includedRoutes: [
+          '**/posts',
+          '**/pages',
+          '**/media',
+          '**/categories',
+          '**/tags',
+          '**/taxonomies',
+          '**/users',
+          '**/menus',
+        ],
+        excludedRoutes: ['**/settings', '**/themes'],
       },
     },
     `gatsby-transformer-sharp`,
