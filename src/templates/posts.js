@@ -3,32 +3,49 @@ import React, { Component } from "react"
 // import Img from "gatsby-image"
 import Layout from "../components/layout"
 
-class PostTemplate extends Component {
+class PostsTemplate extends Component {
   render() {
-    const post = this.props.data.wordpressPost
+    const posts = this.props.data
+
+    console.log(posts)
 
     return (
       <Layout>
         <div>
-          <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          <h1>Blog</h1>
+
+          {posts.allWordpressPost.edges.map(post => (
+            <div>
+              <h2
+                dangerouslySetInnerHTML={{
+                  __html: post.node.title,
+                }}
+              />
+              <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
+            </div>
+          ))}
         </div>
       </Layout>
     )
   }
 }
 
-export default PostTemplate
+export default PostsTemplate
 
-export const pageQuery = graphql`
+export const postsQuery = graphql`
   query allPosts {
-    wordpressPost {
-      title
-    }
-    site {
-      siteMetadata {
-        title
-        description
+    allWordpressPost {
+      edges {
+        node {
+          title
+          id
+          slug
+          status
+          template
+          format
+          content
+          excerpt
+        }
       }
     }
   }

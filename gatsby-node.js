@@ -93,7 +93,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const postsTemplate = path.resolve(`./src/templates/posts.js`)
 
-  reatePage({
+  createPage({
     path: `/blog/`,
     component: slash(postsTemplate),
   })
