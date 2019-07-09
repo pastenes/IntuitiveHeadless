@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+import { graphql } from "gatsby"
+import { Link } from "gatsby"
 // import PropTypes from "prop-types"
 // import Img from "gatsby-image"
 import Layout from "../components/layout"
@@ -15,13 +17,16 @@ class PostsTemplate extends Component {
           <h1>Blog</h1>
 
           {posts.allWordpressPost.edges.map(post => (
-            <div>
-              <h2
-                dangerouslySetInnerHTML={{
-                  __html: post.node.title,
-                }}
-              />
+            <div key={post.node.wordpress_id}>
+              <Link to={"/blog/" + post.node.slug}>
+                <h2
+                  dangerouslySetInnerHTML={{
+                    __html: post.node.title,
+                  }}
+                />
+              </Link>
               <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
+              {/* <img src="" alt={post.node.alt_text} /> */}
             </div>
           ))}
         </div>
@@ -38,13 +43,14 @@ export const postsQuery = graphql`
       edges {
         node {
           title
-          id
           slug
-          status
-          template
-          format
           content
           excerpt
+          featured_media {
+            source_url
+            alt_text
+          }
+          wordpress_id
         }
       }
     }
