@@ -625,6 +625,17 @@ nav.main-nav ul {
   grid-template-columns: repeat(4, 1fr);
   list-style-type: none;
 }
+.wp-block-cover {
+  width: 100%;
+  padding: 5rem;
+  margin: 1rem 0;
+  background-size: cover;
+}
+.wp-block-cover .wp-block-cover__inner-container {
+  color: white;
+  text-align: center;
+  font-size: 2em;
+}
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
