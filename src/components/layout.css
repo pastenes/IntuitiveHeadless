@@ -1,3 +1,6 @@
+:root {
+  --grayish: #5d5d5d;
+}
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -63,6 +66,10 @@ dfn {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 0.4em 0;
 }
 mark {
   background-color: #ff0;
@@ -229,7 +236,7 @@ h1 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
+  color: var(--grayish);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
@@ -246,7 +253,7 @@ h2 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
+  color: var(--grayish);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
@@ -263,7 +270,7 @@ h3 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
+  color: var(--grayish);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
@@ -635,6 +642,14 @@ nav.main-nav ul {
   color: white;
   text-align: center;
   font-size: 2em;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+.blog-grid a {
+  text-decoration: none;
 }
 @media only screen and (max-width: 480px) {
   html {
