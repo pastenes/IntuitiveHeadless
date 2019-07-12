@@ -7,7 +7,6 @@ import SEO from '../components/seo'
 class IndexPage extends Component {
   render() {
     const homePage = this.props.data.allWordpressPage.edges[0].node
-    console.log(homePage)
 
     return (
       <Layout>
