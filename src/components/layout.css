@@ -627,7 +627,8 @@ header {
   background: rebeccapurple;
   margin-bottom: 1.45rem;
 }
-nav.main-nav ul {
+nav.main-nav ul,
+.footer-nav ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   list-style-type: none;

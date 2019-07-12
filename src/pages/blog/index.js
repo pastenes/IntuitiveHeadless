@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import { Link } from 'gatsby'
 // import PropTypes from "prop-types"
 import Img from 'gatsby-image'
 import Layout from '../../components/layout'
 
-class PostsTemplate extends Component {
+export default class BlogPage extends React.Component {
   render() {
     const posts = this.props.data
 
@@ -41,8 +41,6 @@ class PostsTemplate extends Component {
     )
   }
 }
-
-export default PostsTemplate
 
 export const postsQuery = graphql`
   query allPosts {

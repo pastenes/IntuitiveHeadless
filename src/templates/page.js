@@ -1,5 +1,5 @@
-import React, { Component } from "react"
-import Layout from "../components/layout"
+import React, { Component } from 'react'
+import Layout from '../components/layout'
 
 class PageTemplate extends Component {
   render() {
@@ -11,9 +11,6 @@ class PageTemplate extends Component {
         <div>
           <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
           <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
-
-          <p dangerouslySetInnerHTML={{ __html: currentPage.date }} />
-          <p dangerouslySetInnerHTML={{ __html: currentPage.slug }} />
         </div>
       </Layout>
     )

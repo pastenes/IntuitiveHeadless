@@ -11,14 +11,19 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 import MainNav from '../components/menu/mainnav'
+import FooterNav from '../components/menu/footernav'
 import './layout.css'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+    query siteMeta {
+      allWordpressSiteMetadata {
+        edges {
+          node {
+            description
+            home
+            name
+          }
         }
       }
     }
@@ -26,11 +31,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.allWordpressSiteMetadata.edges[0].node.name} />
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
+          maxWidth: `100vw`,
           padding: `0px 1.0875rem 1.45rem`,
           paddingTop: 0,
         }}
@@ -38,7 +43,7 @@ const Layout = ({ children }) => {
         <MainNav />
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
+          <FooterNav />© {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
