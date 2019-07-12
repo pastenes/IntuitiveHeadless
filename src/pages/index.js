@@ -11,7 +11,7 @@ class IndexPage extends Component {
 
     return (
       <Layout>
-        <SEO title="Home Page" />
+        <SEO title="Intuitive Digital" />
         <div>
           <div dangerouslySetInnerHTML={{ __html: homePage.content }} />
         </div>

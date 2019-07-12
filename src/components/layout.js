@@ -10,7 +10,6 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
-import MainNav from '../components/menu/mainnav'
 import FooterNav from '../components/menu/footernav'
 import './layout.css'
 
@@ -32,15 +31,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.allWordpressSiteMetadata.edges[0].node.name} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `100vw`,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <MainNav />
+      <div className="container">
         <main>{children}</main>
         <footer>
           <FooterNav />© {new Date().getFullYear()}, Built with

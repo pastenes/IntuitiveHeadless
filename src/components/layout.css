@@ -1,6 +1,28 @@
+/* Variables */
+
 :root {
   --grayish: #5d5d5d;
+
+  /* Font type colors */
+  --type-black: #212121;
+  --type-gray: #6a6d6d;
+  --type-white: white;
+
+  /* Background colors */
+  --bg-navy: #2b313a;
+  --bg-mint: #8edbd3;
+  --bg-white: white;
+
+  /* Button colors */
+  --btn-tq: #007493;
+  --btn-blue: #3fa4d0;
+
+  /* Link colors */
+  --link-blue: #3fa4d0;
+  --link-tq: #007493;
 }
+
+/* Resets */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -57,18 +79,31 @@ abbr[title] {
 }
 b,
 strong {
-  font-weight: inherit;
-  font-weight: bolder;
+  font-weight: bold;
 }
 dfn {
   font-style: italic;
 }
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Lora', serif;
+}
 h1 {
-  font-size: 2em;
+  font-size: 3.82rem;
   margin: 0.67em 0;
 }
 h2 {
-  font-size: 1.5em;
+  font-size: 2.64rem;
+  margin: 0.4em 0;
+}
+h3 {
+  font-size: 1.76rem;
+  margin: 0.4em 0;
+}
+h4 {
+  font-size: 1.17rem;
   margin: 0.4em 0;
 }
 mark {
@@ -191,8 +226,14 @@ textarea {
   -webkit-appearance: button;
   font: inherit;
 }
+
+/* End resets */
+
+/* Styles */
+/* General */
+
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font-size: 17px;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -206,8 +247,9 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  color: var(--type-black);
+  font-family: 'Cabin', sans-serif;
+  font-size: 1rem;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -236,12 +278,10 @@ h1 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: var(--grayish);
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  color: var(--type-black);
+  font-weight: normal;
+  font-size: 3.82rem;
   text-rendering: optimizeLegibility;
-  font-size: 2.25rem;
   line-height: 1.1;
 }
 h2 {
@@ -253,12 +293,10 @@ h2 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: var(--grayish);
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  color: var(--type-black);
+  font-weight: normal;
+  font-size: 2.64rem;
   text-rendering: optimizeLegibility;
-  font-size: 1.62671rem;
   line-height: 1.1;
 }
 h3 {
@@ -270,48 +308,14 @@ h3 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: var(--grayish);
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  color: var(--type-black);
+  font-weight: normal;
+  font-size: 1.76rem;
   text-rendering: optimizeLegibility;
-  font-size: 1.38316rem;
   line-height: 1.1;
 }
-h4 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 1rem;
-  line-height: 1.1;
-}
-h5 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 0.85028rem;
-  line-height: 1.1;
-}
+h4,
+h5,
 h6 {
   margin-left: 0;
   margin-right: 0;
@@ -321,14 +325,13 @@ h6 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  color: var(--type-black);
+  font-weight: normal;
+  font-size: 1.17rem;
   text-rendering: optimizeLegibility;
-  font-size: 0.78405rem;
   line-height: 1.1;
 }
+
 hgroup {
   margin-left: 0;
   margin-right: 0;
@@ -516,7 +519,7 @@ th {
   font-weight: bold;
 }
 li {
-  margin-bottom: calc(1.45rem / 2);
+  margin-bottom: 0;
 }
 ol li {
   padding-left: 0;
@@ -539,6 +542,13 @@ blockquote *:last-child {
 }
 li *:last-child {
   margin-bottom: 0;
+}
+a,
+a:active {
+  color: var(--link-blue);
+}
+a:hover {
+  color: var(--link-tq);
 }
 p *:last-child {
   margin-bottom: 0;
@@ -623,15 +633,22 @@ pre tt:after {
   content: '';
 }
 
+/* Modules */
 header {
-  background: rebeccapurple;
+  background: transparent;
   margin-bottom: 1.45rem;
 }
-nav.main-nav ul,
-.footer-nav ul {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  list-style-type: none;
+nav.main-nav ul {
+  list-style: none;
+  text-align: right;
+}
+nav.main-nav ul li {
+  display: inline-block;
+  padding: 1rem;
+}
+nav.main-nav ul li a {
+  text-decoration: none;
+  color: var(--type-black);
 }
 .wp-block-cover {
   width: 100%;
