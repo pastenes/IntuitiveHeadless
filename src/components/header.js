@@ -6,9 +6,8 @@ import MainNav from '../components/menu/mainnav'
 const Header = ({ siteTitle }) => (
   <header>
     <div>
-      <h1 style={{ margin: 0 }}>
-        <Link to="/">{siteTitle}</Link>
-      </h1>
+      <Link to="/">{siteTitle}</Link>
+
       <MainNav />
     </div>
   </header>
